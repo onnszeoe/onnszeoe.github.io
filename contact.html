@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko" class="web mobile">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>김지수의 포트폴리오</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  
+
+/*reset(초기화)*/ 
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,table { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+a {color: inherit; text-decoration: none;}
+a:hover {color: inherit; text-decoration: none;}
+a:visited {color: inherit; text-decoration: none}
+
+body {font-family:'Pretendard'}
+::selection{background:#15306B;}
+
+html.web {background:#f9f9f9;}
+html.web body {background: #222222; max-width:500px; margin:0 auto; min-height:100%;}
+
+/*header*/
+#header {position: fixed; top:0; z-index: 1500; width: min(100vw, 500px);}
+#header .gnb {width: 100%;}
+.inner {padding: 25px; background:#222222; text-align: center; }
+
+/*gnb*/
+.gnb ul {position: fixed; bottom:0; background: #222; border-top:1px solid #ffffff40; display: flex; justify-content: space-between; width: min(100vw, 500px); z-index: 1000; box-sizing:border-box; padding:0 25px; }
+.gnb ul li { flex: 1; height: 54px; text-align:center; align-content: center;}
+.gnb ul li img {width: 50% !important;}
+
+/*설명란*/
+.text_box {padding:100px 25px 80px; color:#fff; display: flex; flex-direction: column; gap:35px;}
+.text_box .top_text {padding: 25px; background: #ffffff20; border-radius: 5px;}
+.text_box .top_text h2 {font-size:22px; letter-spacing: -.02em; font-weight: 600; margin-bottom:15px;}
+.text_box .top_text p {font-size: 16px; letter-spacing: -.02em; line-height: 150%;}
+
+.text_box .text {padding-bottom:50px; display: flex; flex-direction: column; gap:15px;}
+.text_box .text h2 {font-size:16px; letter-spacing: -.02em; line-height: 150%; font-weight: 500;}
+.text_box .text p {font-size:14px; letter-spacing: -.02em; line-height: 150%; margin-bottom:10px;}
+.text_box .text p:nth-child(1) {margin-bottom:4px; font-weight:600;}
+.text_box .text div {margin-bottom: 10px; border-bottom: 1px solid #ffffff10;}
+.text_box .text div:last-child {border: none;}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<!--바디 태그-->
+<body oncontextmenu="return false">
+
+<!--헤더-->
+<header id="header">
+	<div class="inner">
+		<h1><a href="main.html"><img src="images/logo.png" alt="jisoo's worksroom" style="width: 40%;"></a></h1>
+    </div>
+</header>
+
+<!--네비-->    
+	<nav class="gnb">
+            <ul>
+                <li class="first"><a href="main.html"><img src="images/home_off.png" alt="home"></a></li>
+                <li><a href="profile.html"><img src="images/profile_off.png" alt="profile"></a></li>
+                <li><a href="list.html"><img src="images/works_off.png" alt="works"></a></li>
+                <li><a href="contact.html"><img src="images/contact.png" alt="contact"></a></li>
+            </ul>
+	</nav>
+
+<!--프로필-->
+  <section class="text_box">
+    <div class="top_text">
+        <h2>봐주셔서 감사합니다!</h2>
+        <p>더 나은 사용자 경험을 제공하기 위해<br>앞으로도 계속 배우고 성장하는<br>디자이너로 나아가겠습니다.</p>
+    </div>
+    <div class="text">
+        <h2>Contact</h2>
+        <div><p>이름</p><p>김지수</p></div>
+        <div><p>휴대폰번호</p><p>82+ 10-5386-8699</p></div>
+        <div><p>이메일</p><p>96_s2@naver.com</p></div>
+        <div><p>주소</p><p>경기도 남양주시</p></div>
+    </div>
+  </section>
+
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko" class="web mobile">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>김지수의 포트폴리오</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+<style>
+/*reset(초기화)*/ 
+html,body { width:100%; height:100%; word-break: keep-all; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,table { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+a {color: inherit; text-decoration: none;}
+a:hover {color: inherit; text-decoration: none;}
+a:visited {color: inherit; text-decoration: none;}
+
+body {font-family:'Pretendard'}
+::selection{background:#15306B;}
+
+html.web {background:#f9f9f9;}
+html.web body {background: #222222; max-width:500px; margin:0 auto; min-height:100%;}
+
+/* header */
+#header {position: fixed; top: 0; z-index: 1500; width: min(100vw, 500px); background: transparent; transition: background-color 0.5s ease;}
+#header.scrolled {background-color: #222222; /* 반투명 검정 */ }
+#header .gnb {width: 100%;}
+.inner {padding: 25px; text-align: center; }
+
+/* gnb */
+.gnb ul {position: fixed; bottom: 0; background: #222; border-top: 1px solid #ffffff40; display: flex; justify-content: space-between; width: min(100vw, 500px); z-index: 1000; box-sizing: border-box; padding: 0 25px; }
+.gnb ul li {flex: 1; height: 54px; text-align: center; align-content: center;}
+.gnb ul li img {width: 50% !important;}
+
+/* banner */
+.banner {height: 80vh; min-height: 360px; background: #222222; padding: 0; }
+.banner .bg_img {display: flex; flex-direction: column; justify-content: flex-end; height: 100%; width: 100%; padding: 0 25px 60px;}
+.banner .bg_img .ct {font-size: 10px; width: fit-content; padding: 4px 8px 6px; margin-bottom: 10px; background: #15306b; border-radius: 3px; color: #ffffff; display: flex; font-weight: bold; }
+.banner .bg_img .bg_tit {font-size: 24px; color: #ffffff; letter-spacing: -1px; font-weight: 500; line-height: 130%;}
+
+/* slider */
+.slider {display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; gap: 0; padding: 0; height: 90%; }
+.slider::-webkit-scrollbar {display: none; }
+
+/* slide */
+.slide {flex: 0 0 100%; min-width: 100%; scroll-snap-align: center; height: 100%; position: relative; border-radius: 0; overflow: hidden; display: flex; align-items: flex-end; }
+
+/* slide background */
+.s1 {background: url('images/main_banner_02.jpg') center/cover no-repeat; }
+.s2 {background: url('images/main_banner_03.jpg') center/cover no-repeat; }
+.s3 {background: url('images/main_banner_04.jpg') center/cover no-repeat; }
+
+
+/* dots */
+.dots {display: flex; justify-content: center; gap: 8px; padding: 20px 0 20px; }
+.dots button {width: 8px; height: 8px; border-radius: 50%; border: 0; background: #c9c9c9; cursor: pointer; padding: 0; }
+.dots button[aria-current="true"] { background: #fff; }
+
+/* profile */
+.profile_bn {padding: 0 25px 50px; background: #222; }
+.profile_bn .bn_box {display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 30px; font-size: 16px; font-weight: 600; line-height: 150%; color: #ffffff; letter-spacing: -.02em; background: #15306B; border-radius: 5px; }
+.profile_bn .bn_box img {width: 60px;}
+
+/* list */
+.list_wrap {padding: 0 25px 100px; background: #222222; }
+.list_wrap h3 {font-size: 20px; color: #ffffff; font-weight: 600; letter-spacing: -.02em; line-height: 130%; margin-bottom: 30px; }
+.list_wrap .list {display: flex; flex-wrap: wrap; gap: 10px; }
+.list_wrap .list_box {flex: 1 1 calc(50% - 10px); color: #ffffff; letter-spacing: -.02em; margin-bottom: 40px; }
+.list_wrap .list_box .img_box {width: 100%; aspect-ratio: 1 / 1; border-radius: 5px; position: relative; }
+.list_wrap .list_box .img_box div {width: 100%; height: 100%; background-color: #22222290; transition: background-color 1s; position: absolute; left:0; top:0; border-radius: 5px;}
+.list_wrap .list_box:hover .img_box div {background: #22222200; }
+.list_wrap .list_box .img_box img {width: 100% !important; border-radius: 5px;}
+.list_wrap .list_box h4 {font-size: 16px; line-height: 150%;}
+.list_wrap .list_box h5 {font-size: 16px; opacity: 60%; font-weight: 400; line-height: 150%; margin-top: 15px; }
+.list_wrap .list_box h6 {font-size: 14px; margin-top: 10px; opacity: 40%; font-weight: 400; }
+.list_wrap .list_bt {display: inline-block; width: 100%; background: #ffffff; border-radius: 5px; padding: 20px 0; font-size: 16px; color: #222222; text-align: center; font-weight: 600; letter-spacing: -.02em; border:1px solid #ffffff60; box-sizing: border-box;}
+
+/*footer*/
+#footer {padding:0 25px 100px; color:#ffffff80; background: #222;;}
+#footer .footer {border-top:1px solid #ffffff20; padding-top:25px; font-size:14px; letter-spacing: -.02em; line-height: 150%; }
+
+@media (max-width:480px) {
+.banner .bg_img {padding:0 15px 60px;}
+.profile_bn {padding: 0 15px 50px;}
+.list_wrap {padding: 0 15px 80px;}
+.list_wrap h3 {margin-bottom:20px;}
+.list_wrap .list_box h6 {margin-top:5px;}
+#footer {padding:0 15px 100px;}
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<!--바디 태그-->
+<body oncontextmenu="return false">
+
+<!--헤더-->
+<header id="header">
+	<div class="inner">
+		<h1><a href="main.html"><img src="images/logo.png" alt="jisoo's worksroom" style="width: 40%;"></a></h1>
+    </div>
+</header>
+
+	<nav class="gnb">
+            <ul>
+                <li class="first"><a href="main.html"><img src="images/home.png" alt="home"></a></li>
+                <li><a href="profile.html"><img src="images/profile_off.png" alt="profile"></a></li>
+                <li><a href="list.html"><img src="images/works_off.png" alt="works"></a></li>
+                <li><a href="contact.html"><img src="images/contact_off.png" alt="contact"></a></li>
+            </ul>
+	</nav>
+
+<section id="main">
+      <section class="banner">
+          <div class="slider" id="slider" aria-label="메인 배너">
+            <section class="slide s1" id="b1">
+              <a href="detail/detail_02.html" class="bg_img">
+                <div class="ct">New Project</div>
+                <div class="bg_tit">제로 소다<br>상세페이지</div>
+              </a>
+            </section>
+
+            <section class="slide s2" id="b2">
+              <a href="detail/detail_03.html" class="bg_img">
+                <div class="ct">New Project</div>
+                <div class="bg_tit">신발 기획전<br>프로모션</div>
+              </a>
+            </section>
+
+            <section class="slide s3" id="b3">
+              <a href="detail/detail_04.html" class="bg_img">
+                <div class="ct">New Project</div>
+                <div class="bg_tit">데이식스 10주년<br>프로모션 페이지</div>
+              </a>
+            </section>
+          </div>
+        
+          <div class="dots" id="dots" role="tablist" aria-label="슬라이드 이동">
+            <button data-i="0" aria-current="true" aria-label="1번 슬라이드"></button>
+            <button data-i="1" aria-label="2번 슬라이드"></button>
+            <button data-i="2" aria-label="3번 슬라이드"></button>
+          </div>
+        </section>
+        
+
+        <div class="profile_bn">
+          <a href="profile.html" class="bn_box">
+            <p>제가 궁금하시다면<br>여기를 클릭하세요!</p>
+            <img src="images/profile_banner.png" alt="아이콘">
+          </a>
+        </div>
+
+      <div class="list_wrap">
+          <h3>이런 작품을<br>만들어 보았어요 🎉</h3>
+          <div class="list">
+              <a class="list_box" href="detail/detail_01.html">
+                  <div class="img_box"><img src="images/thum_01.jpg" alt=""><div></div></div>
+                  <h5>상세페이지</h5>
+                  <h4>향수 상세페이지</h4>
+                  <h6>작업년도 : 2025년</h6>
+              </a>
+              <a class="list_box" href="detail/detail_03.html">
+                  <div class="img_box" a href=""><img src="images/thum_03.jpg" alt=""><div></div></div>
+                  <h5>프로모션</h5>
+                  <h4>신발 신제품 프로모션</h4>
+                  <h6>작업년도 : 2025년</h6>
+              </a>
+          </div>
+          <div class="list">
+              <a class="list_box" href="detail/detail_04.html">
+                  <div class="img_box" a href=""><img src="images/thum_04.jpg" alt=""><div></div></div>
+                  <h5>프로모션</h5>
+                  <h4>데이식스 10주년 프로모션</h4>
+                  <h6>작업년도 : 2025년</h6>
+              </a>
+              <a class="list_box" href="detail/detail_07.html">
+                  <div class="img_box" a href=""><img src="images/thum_07.jpg" alt=""><div></div></div>
+                  <h5>UI/UX</h5>
+                  <h4>맥도날드 UI/UX 리뉴얼</h4>
+                  <h6>작업년도 : 2025년</h6>
+              </a>
+          </div>
+          <a class="list_bt" href ="list.html">
+              더 많은 작품 보기
+          </a>
+      </div>
+
+      <footer id="footer">
+          <div class="footer">
+              <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.</p>
+              <p>© 2025 Kim Ji Soo. All Rights Reserved.</p>
+          </div>
+      </footer>
+
+</section>
+<!--메인-->
+
+
+
+<script>
+(() => {
+  const slider = document.getElementById('slider');
+  const slides = [...slider.querySelectorAll('.slide')];
+  const dots   = [...document.querySelectorAll('#dots button')];
+
+  let idx = 0;
+  const DURATION = 3000;
+  let timer = null;
+  let isDragging = false;
+
+  const updateDots = (activeIndex) => {
+    dots.forEach((d, j) =>
+      d.setAttribute('aria-current', j === activeIndex ? 'true' : 'false')
+    );
+  };
+
+  // 👉 index 기반 이동 (offsetLeft X)
+  const goTo = (i) => {
+    idx = (i + slides.length) % slides.length;
+    const slideWidth = slider.clientWidth; // 현재 뷰포트 너비
+    slider.scrollTo({
+      left: idx * slideWidth,
+      behavior: 'smooth'
+    });
+    updateDots(idx);
+  };
+
+  const next = () => goTo(idx + 1);
+
+  const startAuto = () => {
+    stopAuto();
+    timer = setInterval(next, DURATION);
+  };
+  const stopAuto = () => {
+    clearInterval(timer);
+    timer = null;
+  };
+
+  // 점 클릭
+  dots.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      goTo(parseInt(btn.dataset.i, 10));
+      startAuto();
+    })
+  );
+
+  // IO는 점만 맞춰주고 idx는 건드리지 않음
+  const io = new IntersectionObserver(
+    (entries) => {
+      const vis = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!vis) return;
+      const visibleIndex = slides.indexOf(vis.target);
+      updateDots(visibleIndex);
+    },
+    { root: slider, threshold: [0.6] }
+  );
+  slides.forEach((s) => io.observe(s));
+
+  // 마우스 드래그
+  let isDown = false;
+  let startX, scrollLeft;
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    isDragging = true;
+    stopAuto();
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener("mouseleave", () => (isDown = false));
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    isDragging = false;
+    setTimeout(startAuto, 1500);
+  });
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // 터치
+  slider.addEventListener("touchstart", () => {
+    isDragging = true;
+    stopAuto();
+  });
+  slider.addEventListener("touchend", () => {
+    isDragging = false;
+    setTimeout(startAuto, 1500);
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    document.hidden ? stopAuto() : startAuto();
+  });
+
+  // 시작
+  startAuto();
+})();
+</script>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) { // 50px 이상 스크롤했을 때
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

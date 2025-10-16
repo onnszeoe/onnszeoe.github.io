@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko" class="web mobile">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>김지수의 포트폴리오</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  
+
+/*reset(초기화)*/ 
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,table { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+a {color: inherit; text-decoration: none;}
+a:hover {color: inherit; text-decoration: none;}
+a:visited {color: inherit; text-decoration: none}
+
+body {font-family:'Pretendard'}
+::selection{background:#15306B;}
+
+html.web {background:#f9f9f9;}
+html.web body {background: #222222; max-width:500px; margin:0 auto; min-height:100%;}
+
+/*header*/
+#header {position: fixed; top:0; z-index: 1500; width: min(100vw, 500px);}
+#header .gnb {width: 100%;}
+.inner {padding: 25px; background:#222222; text-align: center; }
+
+/*gnb*/
+.gnb ul {position: fixed; bottom:0; background: #222; border-top:1px solid #ffffff40; display: flex; justify-content: space-between; width: min(100vw, 500px); z-index: 1000; box-sizing:border-box; padding:0 25px; }
+.gnb ul li {flex: 1; height: 54px; text-align:center; align-content: center;}
+.gnb ul li img {width: 50% !important;}
+
+/*category*/
+.category li {cursor: pointer; padding: 6px 12px; border: 1px solid #666; border-radius: 18px; color: #fff; user-select: none; transition: background .2s, color .2s, border-color .2s;}
+.category li.active {background: #15306b; border-color: #15306b; color: #fff;}
+
+/*list bt*/
+.list_wrap .category {display: flex; gap: 5px; margin: 0 0 25px; flex-wrap: wrap;}
+.list_wrap .category li {font-size:14px; color:#fff; cursor: pointer; letter-spacing: -.02em; padding: 6px 15px 8px; border-radius: 100px; border:2px solid #ffffff10}
+
+/*list*/
+.list_wrap {padding:110px 15px 80px; background: #222222; }
+.list_wrap h3 {font-size:20px; color: #ffffff; font-weight: 600; letter-spacing: -.02em; margin-bottom:30px;}
+
+.list_wrap .list {flex: 0 0 calc(50% - 10px); color: #ffffff; letter-spacing: -.02em; margin-bottom: 40px; }
+.list_wrap .list_box {padding:20px 0 25px; border-bottom: 1px solid #ffffff10;}
+.list_wrap .list_box h4 {font-size: 16px; line-height: 150%;}
+.list_wrap .list_box h5 {font-size: 16px; opacity: 60%; font-weight: 400; line-height: 150%;}
+.list_wrap .list_box h6 {font-size: 14px; margin-top: 10px; opacity: 40%; font-weight: 400; }
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<!--헤더-->
+<header id="header">
+	<div class="inner">
+		<h1><a href="main.html"><img src="images/logo.png" alt="jisoo's worksroom" style="width: 40%;"></a></h1>
+    </div>
+</header>
+
+<!--네비-->    
+	<nav class="gnb">
+            <ul>
+                <li class="first"><a href="main.html"><img src="images/home_off.png" alt="home"></a></li>
+                <li><a href="profile.html"><img src="images/profile_off.png" alt="profile"></a></li>
+                <li><a href="list.html"><img src="images/works.png" alt="works"></a></li>
+                <li><a href="contact.html"><img src="images/contact_off.png" alt="contact"></a></li>
+            </ul>
+	</nav>
+
+<div class="list_wrap">
+  <h3>작품 자세히 보기</h3>
+
+  <!-- 카테고리 버튼 -->
+  <ul class="category">
+    <li data-filter="all" class="active">전체</li>
+    <li data-filter="detail">상세페이지</li>
+    <li data-filter="promotion">프로모션</li>
+    <li data-filter="banner">배너</li>
+    <li data-filter="etc">기타</li>
+  </ul>
+
+  <!-- 작품 목록-->
+   <div class="list">
+    <ul>
+      <li class="list_box" data-category="detail">
+        <a href="detail/detail_02.html">
+          <h5>상세페이지</h5>
+          <h4>제로소다 상세페이지</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>
+      <li class="list_box" data-category="promotion">
+        <a href="detail/detail_03.html">
+          <h5>프로모션</h5>
+          <h4>신발 신제품 프로모션</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>
+      <li class="list_box" data-category="promotion">
+        <a href="detail/detail_04.html">
+          <h5>프로모션</h5>
+          <h4>데이식스 10주년 기념 프로모션</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>
+      <li class="list_box" data-category="detail">
+        <a href="detail/detail_01.html">
+          <h5>상세페이지</h5>
+          <h4>향수 상세페이지</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>
+      <li class="list_box" data-category="promotion">
+        <a href="detail/detail_05.html">
+          <h5>프로모션</h5>
+          <h4>한주의 발견 기획전</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>  
+      <li class="list_box" data-category="detail">
+        <a href="detail/detail_06.html">
+          <h5>상세페이지</h5>
+          <h4>비타민 구미 상세페이지</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>          
+      <li class="list_box" data-category="etc">
+        <a href="detail/detail_07.html">
+          <h5>UI/UX</h5>
+          <h4>맥도날드 UI/UX 리뉴얼</h4>
+          <h6>제작년도 : 2025년</h6>
+        </a>
+      </li>        
+      <li class="list_box" data-category="promotion">
+        <a href="detail/detail_08.html">
+          <h5>프로모션</h5>
+          <h4>발렌타인데이 프로모션</h4>
+          <h6>제작년도 : 2024년</h6>
+        </a>
+      </li>      
+      <li class="list_box" data-category="etc">
+        <a href="detail/detail_09.html">
+          <h5>UI/UX</h5>
+          <h4>음반비교 신규 서비스 UI/UX</h4>
+          <h6>제작년도 : 2024년</h6>
+        </a>
+      </li>       
+      <li class="list_box" data-category="promotion">
+        <a href="detail/detail_10.html">
+          <h5>프로모션</h5>
+          <h4>2024 해피뉴이어 프로모션</h4>
+          <h6>제작년도 : 2024년</h6>
+        </a>
+      </li>                                 
+    </ul>
+   </div>
+
+</div>
+
+
+<script>
+(() => {
+  const btns = document.querySelectorAll('.list_wrap .category li');
+  const items = document.querySelectorAll('.list_wrap .list_box');
+  const rows = document.querySelectorAll('.list_wrap .list');
+
+  function applyFilter(filter) {
+    const f = (filter || 'all').toLowerCase();
+
+    items.forEach(item => {
+      const catRaw = (item.dataset.category || '').toLowerCase().trim();
+      const cats = catRaw.split(/\s+/).filter(Boolean);
+      const visible = (f === 'all') || cats.includes(f);
+      item.style.display = visible ? '' : 'none';
+    });
+
+    rows.forEach(row => {
+      const anyVisible = [...row.querySelectorAll('.list_box')]
+        .some(box => box.style.display !== 'none');
+      row.style.display = anyVisible ? '' : 'none';
+    });
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  const initialFilter = document.querySelector('.list_wrap .category li.active')?.dataset.filter || 'all';
+  applyFilter(initialFilter);
+})();
+</script>
+
+
+</body>
+</html>
