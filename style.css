@@ -12,7 +12,7 @@ html.web body {background: #222222; max-width:500px; margin:0 auto; min-height:1
 
 /*gnb*/
 .gnb ul {position: fixed; bottom:0; background: #222; border-top:1px solid #ffffff40; display: flex; justify-content: space-between; width: min(100vw, 500px); z-index: 1000; box-sizing:border-box; padding:0 25px; }
-.gnb ul li { flex: 1; height: 54px; text-align:center}
+.gnb ul li { flex: 1; height: 54px; text-align:center; align-content:cetner;}
 .gnb ul li img {width: 50% !important;}
 
 /*디테일 상단*/
@@ -49,5 +49,6 @@ html.web body {background: #222222; max-width:500px; margin:0 auto; min-height:1
 .detail_bottom {padding:25px 15px 75px;}
 .detail_bottom div {padding: 20px 20px 25px;}
 #footer {padding: 0 15px 100px;}
+
 
 }
